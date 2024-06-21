@@ -1,0 +1,419 @@
+<html >
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="JS/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <style>
+            .menu_izquierdo {
+                background: rgba(227, 125, 208, 0.721);
+                position: fixed;
+                height: 100%;
+                width: 16%;
+            }
+            .menu_derecho {
+                
+                background: rgba(218, 180, 243, 0.322);
+                margin-left: 15.5%;
+                padding: 30px;
+                height: 100vh; /* Ocupa toda la altura de la ventana */
+                overflow: hidden; /* Oculta el desbordamiento */
+                display: flex; /* Nuevo: para centrar el contenido */
+                justify-content: left; /* Nuevo: para centrar el contenido */
+                align-items: center; /* Nuevo: para centrar el contenido */
+                scroll-behavior: auto; /* Transición suave */
+                
+            }
+            .imagen {
+                border-radius: 50%;
+                width: 180px;
+                height: 180px;
+                margin-top: 280px;
+                margin-left: 50px;
+                border: 8px solid #fafafa57;
+            }
+            .menu_I {
+                margin-left: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 14px;
+                font-weight: bold;
+                color: #f7f7f7;
+
+
+            }
+            .menu_I div {
+                cursor: pointer;
+                padding: 10px 0;
+            }
+            .menu_I div:hover {
+                color: #f7f7f7;
+                border-radius: 5px;
+                
+            }
+            .titulo{
+                color: cadetblue;
+                font-size: 50px;
+                position: relative;
+            }
+            .iconos {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            .iconos a {
+                color: #333;
+                font-size: 24px;
+                text-decoration: none;
+            }
+            .project-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+            .project {
+                background: rgba(223, 148, 209, 0.411);
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                margin: 10px;
+                width: calc(33% - 20px);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 15px;
+            }
+            .project img {
+                max-width: 100%;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 15px;
+            }
+            .project h3 {
+                font-size: 20px;
+                margin: 0 0 10px;
+            }
+            .project p {
+                font-size: 14px;
+                margin: 0 0 10px;
+            }
+            .project a {
+                color: #4391a5c4;
+                text-decoration: none;
+            }
+            .project a:hover {
+                text-decoration: underline;
+            }
+            .section {
+                display: none;
+            }
+            .section.active {
+                display: block;
+            }
+
+            .img-programs{
+                width: 50px;
+                height: 50px;
+
+            }           
+            
+        
+            .titulo {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            .iconos {
+                display: flex; /* Nuevo: para centrar el contenido */
+                justify-content: left;
+                margin-top: 20px;
+                
+            }
+            .iconos a {
+                margin: 0 10px;
+                font-size: 24px;
+                color: #495156;
+                transition: color 0.2s ease;
+            }
+            .iconos a:hover {
+                color: #495156;
+            }
+            .iconos i {
+                margin: 0 10px;
+                font-size: 24px;
+                color: #495156;
+            }
+            /* About Section */
+            
+            #about .titulo {
+                font-size: 96px;
+                color: #39bca7;
+                font-family: Segoe UI;
+                font-weight: bold;
+                margin-bottom: 20px;
+                
+            }
+            #about .correo {
+                font-size: 24px;
+                color: #39bca7;
+                font-family: apple-system ;
+                font-weight: bold;
+                
+            }
+            #about .descripcion {
+                font-size: 16px;
+                color: #333;
+            }
+            /* Other Sections */
+            #projects, #education, #skills, #interests {
+                padding: 20px;
+                margin-bottom: 20px;
+                font-family: Segoe UI;
+                
+                border-radius: 10px;
+                
+            }
+            .Lugar{
+                font-family:  Tahoma;
+                font-weight: bold;
+                color: #5e3481;
+
+            }
+            .Carrera{
+                font-family: monospace;
+                color: #18131a;
+                
+            }
+            .descr{
+                font-family: monospace;
+                color: #18131a;
+                
+            }
+            .fecha{
+                font-family: monospace;
+                color: #18131a;
+                
+            }
+            .mpb{
+                width: 70%;
+                height: 30%;
+                box-shadow: 5px #495156;
+                border-radius: 20px;
+            }
+            .iestp{
+                width: 70%;
+                height: 20%;
+                box-shadow: 5px #495156;
+                border-radius: 20px;
+            }
+            .titles{
+                color: #39bca7;
+                margin-bottom: 50px;
+                font-family:  'Trebuchet MS';
+                font-weight: bold;
+
+            }
+            .collage{
+                width: 50px;
+                height: 70px;
+            }
+            .owl-carousel {
+                width: 100%;
+                height: 300px; /* ajusta el alto según sea necesario */
+                margin: 0 auto;
+            }
+            .MI{
+                font-family: monospace;
+                font-size: 20PX;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-2 menu_izquierdo">
+                <div class="col-md-4">
+                    <img class="imagen" src="img/WhatsApp Image 2024-06-20 at 3.48.59 PM.jpeg" alt="Profile Image">
+                </div><br>
+                <div class="col-md-4 menu_I">
+                    <div onclick="showSection('about')">ABOUT</div>
+                    <div onclick="showSection('projects')">PROJECTS</div>
+                    <div onclick="showSection('education')">EDUCATION</div>
+                    <div onclick="showSection('skills')">SKILLS</div>
+                    <div onclick="showSection('interests')">INTERESTS</div>
+                </div>
+            </div>
+            <div class="col-md-10 menu_derecho">
+                <div id="about" class="section active">
+                    <div class=" titulo">Katya Ramirez</div>
+                    <div class="correo">Perú  -  ramireztavillazulema@gmail.com </div>
+                    <div class=" descripcion">Ingeniero de software interesado en diseñar un mejor método de resolución de problemas para tareas desafiantes y aprender nuevas tecnologías y herramientas.</div>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://gitlab.com" target="_blank"><i class="fab fa-gitlab"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div id="projects" class="section">
+                    <h2 class="titles">Projects</h2>
+                    <div class="project-container">
+                        <div class="project">
+                            <img src="https://binos30.github.io/src/img/solanaland.png" alt="Proyecto 1">
+                            <h3>SOLANALAND</h3>
+                            <p>Custom Project and Material Management System.</p>
+                            <p>(Rails 6, React(TypeScript), PostgreSQL, Heroku)</p>
+                            <a href="https://website1.com">Website</a>
+                        </div>
+                        <div class="project">
+                            <img src="https://binos30.github.io/src/img/brotherskeeper.png" alt="Proyecto 2">
+                            <h3>BROTHERSKEEPER</h3>
+                            <p>Membership Management and Monitoring System for Christian Organization.</p>
+                            <p>(NodeJS, ReactJS, MongoDB, AWS Lambda)</p>
+                            <a href="https://website2.com">Website</a>
+                        </div>
+                        <div class="project">
+                            <img src="https://binos30.github.io/src/img/brotherskeeper-revamp.png" alt="Proyecto 3">
+                            <h3>BROTHERSKEEPER (REVAMP)</h3>
+                            <p>Membership Management and Monitoring System for Christian Organization.</p>
+                            <p>(Rails 7, StimulusJS, PostgreSQL, Heroku)</p>
+                            <a href="https://website3.com">Website</a>
+                        </div>
+                        <div class="project">
+                            <img src="https://binos30.github.io/src/img/todo.png" alt="Proyecto 4">
+                            <h3>TODO</h3>
+                            <p>Todo list app that stores items in the browser's local storage.</p>
+                            <p>(React(TypeScript), Tailwind CSS)</p>
+                            <a href="https://website4.com">Website</a>
+                        </div>
+                        <div class="project">
+                            <img src="https://binos30.github.io/src/img/instablog.png" alt="Proyecto 5">
+                            <h3>INSTABLOG</h3>
+                            <p>A simple web app for CRUDing a blog post and sending feedback email with authentication.</p>
+                            <p>(Rails 7, PostgreSQL, Solid Queue, Bootstrap, SendGrid)</p>
+                            <a href="https://website5.com">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="education" class="section">
+                    <h2 class="titles">Educacion</h2>
+                    <div class="education">
+                        <div class="Lugar">INSTITUTO DE EDUCACION SUPERIOR TECNOLOGICO PAUCAR DEL SARA</div>
+                        <img class="iestp" src="https://iestpsarasara.iestpsdg.edu.pe/wp-content/uploads/2023/11/slider1-sarasara.jpg"><br>
+
+                        <div class="Carrera">TECNICA EN COMPUTACIÓN E INFORMATICA</div>
+                        <div class="descr">Tecnología de la información: pista de análisis empresarial</div>
+                        <div class="fecha">Junio 2022 - Junio 2024</div>                         
+                        
+                                            
+                        
+                    </div>
+
+                    <div class="Lugar">
+                        Colegio - Maria Parado de Bellido
+                         June 2017 - March 2021
+                    </div>
+                    <img class="mpb" src="https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-6/284264961_1419337018512402_6266389105516029954_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=RIaZNIun82cQ7kNvgEpMtwk&_nc_ht=scontent.flim2-1.fna&oh=00_AYBo-_WKLrBBSnhVUruC_6G-uP-q066ySlx5maN9MF0Bzg&oe=667A5BA9">
+
+                    <div class="Lugar">
+                        Escuela - Jesus Pimentel Moscoso
+                        June 2010 - March 20016
+                        
+                    </div>
+                    
+                   
+
+
+
+                </div>
+                
+
+                <div id="skills" class="section">
+                    <h2 class="titles">Skills</h2>
+                    <div>LENGUAJES Y HERRAMIENTAS DE PROGRAMACIÓN</div>
+                        <div >                       
+                          <img class="img-programs" src="https://binos30.github.io/src/img/html5-icon.svg" >                                               
+                          <img class="img-programs" src="https://binos30.github.io/src/img/css3-icon.svg" >   
+                          <img class="img-programs" src="https://binos30.github.io/src/img/bootstrap-icon.svg" >  
+                          <img class="img-programs" src="https://binos30.github.io/src/img/js-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/jquery-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/nodejs-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/react-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/php-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/rails-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/java-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/flutter-icon.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/linux-original.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/mysql-original.svg" > 
+                          <img class="img-programs" src="https://binos30.github.io/src/img/postgresql-original.svg" > 
+                        </div>           
+
+                </div>
+
+                <div id="interests" class="section">
+                    <h2 class="titles">INTERESTS</h2>
+
+                    <p class="MI">Veo películas, k-dramas, anime y series de:  acción, comedia, ciencia ficción y fantasía. Escucho música y me encanta la lluvia.</p>
+
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="img/WhatsApp_Image_2024-06-20_at_4.53.57_PM-removebg-preview.png" alt="Imagen 1">
+                        </div>
+                        <div class="item">
+                            <img src="img/WhatsApp_Image_2024-06-20_at_4.53.57_PM__1_-removebg-preview - copia.png">
+                        </div>
+                        <div class="item">
+                            <img src="img/WhatsApp_Image_2024-06-20_at_4.53.57_PM__2_-removebg.png" alt="Imagen 3">
+                        </div>
+                        <div class="item">
+                            <img src="img/WhatsApp Image 2024-06-20 at 5.40.01 PM.jpeg" alt="Imagen 3">
+                        </div>
+                        
+                    </div>
+
+                   
+
+
+                </div>
+            </div>
+            
+        </div>
+        <script>
+            $(document).ready(function() {
+                $(".owl-carousel").owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                });
+            });
+        </script>
+        <script>
+            function showSection(sectionId) {
+                
+                var sections = document.querySelectorAll('.section');
+                sections.forEach(function(section) {
+                    section.classList.remove('active');
+                });
+                
+                document.getElementById(sectionId).classList.add('active');
+            }
+        </script>
+
+    </body>
+</html>
+
